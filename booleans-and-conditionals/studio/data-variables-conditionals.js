@@ -22,7 +22,7 @@ if ((astronautCount <= 7)
 // add logic below to verify the total mass does not exceed the maximum limit of 850000
          && (toatlMassKg < maximumMassLimit)
 // add logic below to verify the fuel temperature is within the appropriate range of -150 and -300
-            && (fuelTempCelsius > -300 && fuelTempCelsius < -150)
+            && (fuelTempCelsius >= -300 && fuelTempCelsius <= -150)
 // add logic below to verify the fuel level is at 100%
                 && (fuelLevel === "100%")
 // add logic below to verify the weather status is clear
@@ -63,4 +63,4 @@ if (preparedForLiftOff === true){
     console.log("Weather Status:  " + weatherStatus)
     console.log("---------------------------------------------------------------")
     console.log("Launch Aborted, Stay Safe!")
-};
+}; 
