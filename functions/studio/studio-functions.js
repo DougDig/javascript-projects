@@ -3,6 +3,15 @@
 // Part One: Reverse Characters
 
 // 1. Define the function as reverseCharacters. Give it one parameter, which will be the string to reverse.
+function reverserCharacters(stringToRev) {
+    if (typeof stringToRev === 'string') {
+    return stringToRev.split('').reverse().join('');
+    } else { 
+        return Number(String(stringToRev).split('').reverse().join(''));
+    }
+}
+
+console.log(reverserCharacters(827))
 // 2. Within the function, split the string into an array, then reverse the array.
 // 3. Use join to create the reversed string and return that string from the function.
 // 4. Below the function, define and initialize a variable to hold a string.
@@ -18,7 +27,13 @@
 // 5. Be sure to print the result returned by the function to verify that your code works for both strings and numbers. Do this before moving on to the next exercise.
 
 // Part Three: Complete Reversal - Create a new function with one parameter, which is the array we want to change. The function should:
-
+function completeReversal(arrayToRev) {
+    let tempArray = [];
+    for (i=0; i<arrayToRev.length; i++) {
+        tempArray.unshift(reverserCharacters(arrayToRev[i]))
+    }
+    return tempArray;
+}
 // 1. Define and initialize an empty array.
 // 2. Loop through the old array.
 // 3. For each element in the old array, call reverseCharacters to flip the characters or digits.
@@ -29,7 +44,7 @@
 let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
-
+console.log(completeReversal(arrayTest3))
 // Bonus Missions
 
 // 1. Have a clear, descriptive name like funPhrase.
@@ -37,13 +52,28 @@ let arrayTest3 = ['hello', 'world', 123, 'orange'];
 // 3. Retrieve only the first 3 characters from strings with lengths larger than 3.
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
 
+function putTheFunIn (inputString) {
+    if (inputString.length > 2) {
+        return inputString.slice(0,3)
+    } else {
+        return inputString[0]
+    }
+}
+let someStr = 'Potatoman'
+console.log (`We put the ${putTheFunIn(someStr)} in ${someStr}`)
 // Test Function
-
+let str = "Functions rock!"
 // 1. Outside of the function, define the variable str and initialize it with a string (e.g. 'Functions rock!').
 // 2. Call your function and print the returned phrase.
-
+putTheFunIn(str)
 // Area of rectangle equal to length x width
+function rectangleArea(height,width = height){
+    let area = 0;
+    area = (height*width);
+    return area;
+}
 
+console.log(`The area is ${rectangleArea(7,3)}cm^2`)
 // 1. Define a function with the required parameters to calculate the area of a rectangle.
 // 2. The function should return the area, NOT print it.
 // 3. Call your area function by passing in two arguments - the length and width.
