@@ -13,3 +13,15 @@ c) Print the new array to confirm your work.
 */
 
 let arr = ['Elocution', 21, 'Clean teeth', 100];
+
+let pirateTriple = function (input) {
+    if (typeof input === "string") {
+        return "ARRR!";
+    } else if (typeof input === "number") {
+        return input*3;
+    } else {
+        return 'I dunno chief';
+    }
+}
+
+console.log(([3,4,'steven']).map(pirateTriple))
