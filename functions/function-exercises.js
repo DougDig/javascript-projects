@@ -1,7 +1,7 @@
 
 function makeLine(lineSize) {
     let diamondOutput = "";
-    for (i=0; i<lineSize; i++) {
+    for (let i=0; i<lineSize; i++) {
         diamondOutput = diamondOutput + "#";
     }
     return diamondOutput;
@@ -15,7 +15,7 @@ function makeSquare(SquareSize) {
 
 function makeRectangle(rectWidth, rectHeight) {
     let rectangleOutPut = "";
-    for (ri = 0; ri<(rectHeight-1); ri++) {
+    for (let i = 0; i<(rectHeight-1); i++) {
         rectangleOutPut = rectangleOutPut + makeLine(rectWidth) + '\n';
     }
     if (rectHeight>0) {
@@ -26,9 +26,9 @@ return rectangleOutPut;
 
 function makeDownwardStairs(stairHeight) {
     let stairOutput = "";
-    for (ai=0; ai<stairHeight; ai++){
-        stairOutput = stairOutput + makeLine(ai+1);
-        if ((ai+1)<stairHeight) {
+    for (let i=0; i<stairHeight; i++){
+        stairOutput = stairOutput + makeLine(i+1);
+        if ((i+1)<stairHeight) {
             stairOutput = stairOutput + '\n';
         }
     }
@@ -37,7 +37,7 @@ function makeDownwardStairs(stairHeight) {
 
 function makeSpace(spaceLength, spaceIcon = ' ') {
     let spaceOutput = ""
-    for (bi=0;bi<spaceLength;bi++){
+    for (let i=0;i<spaceLength;i++){
         spaceOutput = spaceOutput + spaceIcon;
     }
     return spaceOutput;
@@ -46,7 +46,7 @@ function makeSpace(spaceLength, spaceIcon = ' ') {
 function makeSpaceLine(spaceNum,hashNum, hashIcon = '#', spaceIcon = ' ') {
     let spaceLineOutput = "";
     let spacesTemp = makeSpace(spaceNum, spaceIcon);
-    for (ci=0;ci<hashNum;ci++){
+    for (let i=0;i<hashNum;i++){
         spaceLineOutput = spaceLineOutput + hashIcon;
     }
     spaceLineOutput = spacesTemp + spaceLineOutput + spacesTemp;
@@ -55,9 +55,9 @@ function makeSpaceLine(spaceNum,hashNum, hashIcon = '#', spaceIcon = ' ') {
 
 function makeIsocelesTriangle(isoHeight, hashIcon = '#', spaceIcon = ' '){
     let isoOutput = "";
-    for (di=0; di<isoHeight; di++) {
-        isoOutput = isoOutput + makeSpaceLine((isoHeight-(di+1)),(2*di+1), hashIcon, spaceIcon);
-        if (di<(isoHeight-1)){
+    for (let i=0; i<isoHeight; i++) {
+        isoOutput = isoOutput + makeSpaceLine((isoHeight-(i+1)),(2*i+1), hashIcon, spaceIcon);
+        if (i<(isoHeight-1)){
             isoOutput = isoOutput + "\n";
         }
     }

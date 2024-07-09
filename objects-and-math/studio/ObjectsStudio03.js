@@ -1,5 +1,11 @@
 // Code your crewMass function here:
-
+function crewMass(crewArray){
+  let crewMass = 0
+  for(index in crewArray) {
+crewMass = crewMass + crewArray[index].mass;
+  }
+return Math.round(crewMass*100)/100;
+}
 
 // Code your fuelRequired function here:
 
@@ -50,5 +56,28 @@ let candidateA = {
    'astronautID':890
  };
  
- let crew = [candidateB,candidateD,candidateF];
+ let crew = [candidateB,candidateE,candidateF];
+ console.log(crewMass(crew));
+ 
+ function fuelMargin (crew) {
+  bonusFuel =0 
+  for (index in crew) {
+    if (crew[index].species === 'cat' || crew[index].species === 'dog'){
+      bonusFuel = bonusFuel + 200;
+    } else {
+      bonusFuel = bonusFuel + 100;
+    }
+  }
+  return bonusFuel;
+ }
+ 
+ function fuelRequired(crewWeight = crewMass(crew), shipWeight = 75000, bonusFuel = fuelMargin(crew)) {
+  let totalWeight = crewWeight + shipWeight;
+  let minimumFuelRequired = totalWeight * 9.5
+  return Math.ceil(minimumFuelRequired + bonusFuel);
+ }
+
+ console.log(fuelMargin(crew));
+ console.log(fuelRequired());
+
  
