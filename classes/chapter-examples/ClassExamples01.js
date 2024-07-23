@@ -1,3 +1,4 @@
+
 //Try adding new properties inside constructor.
 class Astronaut {
    constructor(name, age, mass){

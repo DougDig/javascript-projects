@@ -1,7 +1,7 @@
 function gradeLabs(labs) {
   for (let i=0; i < labs.length; i++) {
     let lab = labs[i];
-    try {lab.runLab(0)} catch {console.log('Data format incorrect: Aborting grading');
+    try {lab.runLab(0)} catch(erorr) {console.log('Data format incorrect: Aborting grading');
       return null;
     };
     let result = lab.runLab(3);
