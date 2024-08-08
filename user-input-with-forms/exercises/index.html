@@ -8,7 +8,28 @@
     </style>
   </head>
   <body>
-    <!-- TODO: add form here -->
+    <form action="https://handlers.education.launchcode.org/request-parrot" method="POST">
+      <label> Test Name <input type='text' name='testName' required/></label>
+      <label> Test Date <input type='date' name='testDate' required/></label>
+      <label> Rocket Type: 
+        <select name='rocketType' required>
+          <option value="">-Select an Option-</option>
+          <option value="Brant">Brant</option>
+          <option value="Lynx">Lynx</option>
+          <option value="Orion">Orion</option>
+          <option value="Terrier">Terrier</option>
+        </select>
+      </label>
+      <label> Wind Rating</label>
+      <label> No Wind </label>
+      <input type='radio' name='windRating' value="0" required/>
+      <label> Mild Wind </label>
+      <input type='radio' name='windRating' value="10"/>
+      <label> Strong Wind </label>
+      <input type='radio' name='windRating' value="20"/>
+      <label> Use Production Grade Servers: <input type='checkbox' name="productionGrade"/></label>
+      <button>Run Simulation</button>
+    </form>
   </body>
   
 </html>
