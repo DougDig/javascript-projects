@@ -2,18 +2,48 @@
 
 <head>
 	<meta charset="utf-8">
-	<script>
-		// TODO: create a handler
-    window.addEventListener("load", function(){
-        // TODO: register the handler
-    });
-	</script>
+	
 </head>
 
 <body>
 
-	<form id="searchForm">
-    <!-- TODO: add form elements -->
+	<form id="searchForm" action="">
+    	<input type="text" name="q"/>
+		<input type='radio' name='searchEngine' value="Google" required/>
+		<label> Google </label>
+		<input type='radio' name='searchEngine' value="Duck Duck Go"/>
+		<label> Duck Duck Go </label>
+		<input type="radio" name="searchEngine" value="Bing"/>
+		<label> Bing </label>
+		<input type="radio" name="searchEngine" value="Ask"/>
+		<label> Ask </label>
+		<br>
+		<br>
+		<button id='submitButton' value="Go"> Submit Button </button>
 	</form>
 
+	<script>
+		let actions = {
+			'Google':'https://www.google.com/',
+			"Duck Duck Go":'https://duckduckgo.com/',
+			'Bing':'https://www.bing.com/',
+			'Ask': 'https://www.ask.com/',
+		}
+		// TODO: create a handler
+		function setSearchEngine(){
+			console.log('I ran I ran so far away');
+			let searchEngineChoice = document.querySelector('input[name=searchEngine]:checked').value;
+			console.log(searchEngineChoice);
+			console.log(actions.Google);
+			console.log(actions[searchEngineChoice]);
+			document.getElementById('searchForm').setAttribute('action',actions[searchEngineChoice]);
+			console.log(document.getElementById('searchForm').action);
+			
+		}
+    window.addEventListener("load", function(){
+        // TODO: register the handler
+    });
+	let submitButt = document.getElementById('submitButton');
+	submitButt.addEventListener('click', setSearchEngine);
+	</script>
 </body>
